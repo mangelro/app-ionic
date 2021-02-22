@@ -50,9 +50,5 @@ export class Tab1Page {
     //this._router.navigateByUrl('/tabs/tab1/agregar');
   }
 
-  listaSeleccionada(lista:Lista){
-
-    this._router.navigate(['/tabs/tab1/agregar',lista.id]);
-
-  }
+ 
 }

@@ -35,6 +35,26 @@ export class DeseosService {
 
   }
 
+  borrarLista(id:string|number)
+  {
+    id=Number(id);
+    this._listas= this._listas.filter(l => l.id!=id);
+    this.guardarStorage();
+  }
+
+  modificarTitulo(id:string|number,nuevoTitulo:string)
+  {
+    id=Number(id);
+    
+    const resul= this._listas.filter(l => l.id==id);
+
+    const index=this._listas.indexOf(resul[0]);
+
+    this._listas[index].titulo=nuevoTitulo;
+
+    this.guardarStorage();
+  }
+
   guardarStorage() {
     localStorage.setItem('data', JSON.stringify(this.Listas));
   }
